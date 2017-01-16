@@ -128,6 +128,7 @@ export var InnerSlider = React.createClass({
     var className = classnames('slick-initialized', 'slick-slider', this.props.className, {
       'slick-vertical': this.props.vertical,
     });
+    var innerClassName = classnames('slick-list', this.props.innerClassName);
 
     var trackProps = {
       fade: this.props.fade,
@@ -219,7 +220,7 @@ export var InnerSlider = React.createClass({
         {prevArrow}
         <div
           ref={this.listRefHandler}
-          className="slick-list"
+          className={innerClassName}
           style={listStyle}
           onMouseDown={this.swipeStart}
           onMouseMove={this.state.dragging ? this.swipeMove: null}
